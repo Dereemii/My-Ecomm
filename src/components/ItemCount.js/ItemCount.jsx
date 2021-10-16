@@ -8,18 +8,20 @@ const ItemCount = ({ initial, stock}) => {
 
     const [count, setCount] = useState(parseInt(initial))
 
-    const handleSub = () => {
+    const onDecrease = () => {
         setCount(parseInt(count - 1))
     }
-    const handleSum = () => {
+    const onIncrease = () => {
         setCount(parseInt(count + 1))
     }
 
     useEffect(() => {
         if (count > parseInt(stock)){
-            console.log("mayor a 5")
+            console.log("mayor a 5");
+            setCount(count -1)
         } else if( count <= 0){
             console.log("menor o igual a 0")
+            setCount(count +1)
         }
     }, [count, stock])
 
@@ -33,11 +35,11 @@ const ItemCount = ({ initial, stock}) => {
                 <h3>Product Name</h3>
                 <div className="counterCard">
                     <span>
-                        <button onClick={handleSub} ><FontAwesomeIcon icon={faMinus} /></button>
+                        <button onClick={onDecrease} ><FontAwesomeIcon icon={faMinus} /></button>
                     </span>
                     <span>{count}</span>
                     <span>
-                        <button onClick={handleSum}><FontAwesomeIcon icon={faPlus} /></button>
+                        <button onClick={onIncrease}><FontAwesomeIcon icon={faPlus} /></button>
                     </span>
                 </div>
                 <div className="addToCart">Add to Cart <FontAwesomeIcon icon={faShoppingCart} /></div>
