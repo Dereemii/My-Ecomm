@@ -2,18 +2,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './ItemCount.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({ initial, stock}) => {
 
-    const [name, setName] = useState("0")
+    const [count, setCount] = useState(parseInt(initial))
 
-    const handleClick = () =>{
-        setName(parseInt(name - 1) )
+    const handleSub = () => {
+        setCount(parseInt(count - 1))
     }
-    const handleSum = () =>{
-        setName(parseInt(name +1))
+    const handleSum = () => {
+        setCount(parseInt(count + 1))
     }
+
+    useEffect(() => {
+        if (count > parseInt(stock)){
+            console.log("mayor a 5")
+        } else if( count <= 0){
+            console.log("menor o igual a 0")
+        }
+    }, [count, stock])
 
 
     return (
@@ -25,9 +33,9 @@ const ItemCount = () => {
                 <h3>Product Name</h3>
                 <div className="counterCard">
                     <span>
-                        <button onClick={handleClick} ><FontAwesomeIcon icon={faMinus} /></button>
+                        <button onClick={handleSub} ><FontAwesomeIcon icon={faMinus} /></button>
                     </span>
-                    <span>{name}</span>
+                    <span>{count}</span>
                     <span>
                         <button onClick={handleSum}><FontAwesomeIcon icon={faPlus} /></button>
                     </span>
