@@ -2,34 +2,26 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './ItemCount.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
-const ItemCount = ({ initial, stock}) => {
+const ItemCount = ({ initial, stock }) => {
 
-    const [count, setCount] = useState(parseInt(initial))
-    const stockText = useRef()
+    const [count, setCount] = useState(initial)
+  /*   const stockText = useRef() */
 
     const onDecrease = () => {
-        setCount(parseInt(count - 1))
-    }
-    const onIncrease = () => {
-        setCount(parseInt(count + 1))
-    }
+        if (count >= initial) {
+         setCount(count - 1)
+       }
+     }
+ 
+     const onIncrease = () => {
+       if (count < stock) {
+         setCount(count + 1)
+       }
+     }
 
-    useEffect(() => {
-        if (count > parseInt(stock)){
-            setCount(count -1)
-            stockText.current.style.display = "block"
-
-        } else if( count <= 0){
-
-            setCount(count +1)
-          
-        } else if(count === 4){
-           stockText.current.style.display = "none"
-        }
-    }, [count, stock])
-
+ 
 
     return (
         <>
@@ -41,14 +33,14 @@ const ItemCount = ({ initial, stock}) => {
                 <div className="counterCard">
                     <span>
                         <button onClick={onDecrease} ><FontAwesomeIcon icon={faMinus} /></button>
-                        
+
                     </span>
                     <span>{count}</span>
                     <span>
                         <button onClick={onIncrease}><FontAwesomeIcon icon={faPlus} /></button>
                     </span>
                 </div>
-                <span ref={stockText} className="stockOver">Stock máximo alcanzado</span>
+                <span style={{ display: count > 4 ? 'block' : 'none' }}  className="stockOver">Stock máximo alcanzado</span>
                 <div className="addToCart">Add to Cart <FontAwesomeIcon icon={faShoppingCart} /></div>
             </div>
         </>

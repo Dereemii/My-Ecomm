@@ -19,7 +19,7 @@ const ItemListContainer = (props) => {
 
             </div>
             <section>
-                <ItemCount stock="5" initial="1" />
+                <ItemCount stock={5} initial={1} />
             </section>
         </>
     );
