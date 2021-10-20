@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import './ItemCount.css';
 import { useState } from 'react';
 
@@ -22,12 +22,9 @@ const ItemCount = ({ initial, stock }) => {
 
     return (
         <>
-            <div className="cardComponent">
-                <div className="imgCard">
-                    <img src="https://via.placeholder.com/150" alt="imagen de prueba" />
-                </div>
-                <h3>Product Name</h3>
-                <div className="counterCard">
+
+            <div className="counterCard">
+                <div>
                     <span>
                         <button onClick={onDecrease} ><FontAwesomeIcon icon={faMinus} /></button>
 
@@ -37,9 +34,11 @@ const ItemCount = ({ initial, stock }) => {
                         <button onClick={onIncrease}><FontAwesomeIcon icon={faPlus} /></button>
                     </span>
                 </div>
-                <span style={{ display: count > 4 ? 'block' : 'none' }} className="stockOver">Stock máximo alcanzado</span>
-                <div className="addToCart">Add to Cart <FontAwesomeIcon icon={faShoppingCart} /></div>
+                {/* { count >= stock && <span className="stockOver">Stock máximo alcanzado</span> } */}
+                <div style={{ display: count > 4 ? 'block' : 'none' }} className="stockOver">Stock máximo alcanzado</div>
             </div>
+
+
         </>
     );
 }

@@ -1,5 +1,5 @@
-import './itemListContainer.css'
-import ItemCount from '../ItemCount.js/ItemCount';
+import './itemListContainer.css';
+import ItemList from '../ItemList/ItemList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,11 +16,8 @@ const ItemListContainer = (props) => {
                 <span>
                     <FontAwesomeIcon icon={faChevronRight} />
                 </span>
-
             </div>
-            <section>
-                <ItemCount stock={5} initial={1} />
-            </section>
+            <ItemList />
         </>
     );
 }
