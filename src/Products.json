@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Mouse",
+    "price": 100,
+    "id": 1,
+    "photo": "https://resource.logitechg.com/w_460,c_limit,q_auto,f_auto,b_rgb:f4f4f4,dpr_2.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/g203-hero.png?v=1"
+  },
+  {
+    "name": "Teclado",
+    "price": 150,
+    "id": 2,
+    "photo": "https://m.media-amazon.com/images/I/618L+V-I3oL._AC_SX522_.jpg"
+  },
+  {
+    "name": "Monitor",
+    "price": 500,
+    "id": 3,
+    "photo": "https://www.lg.com/au/images/it-monitors/md06004256/gallery/medium02.jpg"
+  }
+]
