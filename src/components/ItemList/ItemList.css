@@ -1,3 +1,7 @@
-.imgCard img {
+.imgCard {
   width: 150px;
+  height: 150px;
+}
+.imgCard img {
+  width: inherit;
 }

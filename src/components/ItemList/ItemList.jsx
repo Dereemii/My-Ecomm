@@ -1,21 +1,35 @@
-import ItemCount from '../ItemCount.js/ItemCount';
+import { useEffect, useState } from "react";
+import Products from "../../Products.json";
 import './ItemList.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Item from '../Item/Item';
 
-const ItemList = ({ product }) => {
+const ItemList = () => {
+    const [productos, setProductos] = useState([]);
+
+    const getData = (data) =>
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (data) {
+                    resolve(data);
+                } else {
+                    reject("No se encontro nada");
+                }
+            }, 2000);
+        });
+
+    useEffect(() => {
+        getData(Products)
+            .then((res) => setProductos(res))
+            .catch((err) => console.log(err));
+    }, []);
+
     return (
         <>
-            <div className="cardComponent">
-                <div className="imgCard">
-                    <img src={product.photo} alt="imagen de prueba" />
-                </div>
-                <h3>{product.name}</h3>
-                <p>{product.price}</p>
-                <ItemCount stock={5} initial={1} />
-                <div className="addToCart">Add to Cart <FontAwesomeIcon icon={faShoppingCart} /></div>
-            </div>
-
+            {productos.length
+                ? productos.map((producto) => (
+                    <Item product={producto} key={producto.id} />
+                ))
+                : "Loading..."}
         </>
     );
 }

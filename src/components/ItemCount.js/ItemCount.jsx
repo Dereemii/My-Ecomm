@@ -34,8 +34,9 @@ const ItemCount = ({ initial, stock }) => {
                         <button onClick={onIncrease}><FontAwesomeIcon icon={faPlus} /></button>
                     </span>
                 </div>
+
                 {/* { count >= stock && <span className="stockOver">Stock máximo alcanzado</span> } */}
-                <div style={{ display: count > 4 ? 'block' : 'none' }} className="stockOver">Stock máximo alcanzado</div>
+                <div style={{ visibility: count > 4 ? 'visible' : 'hidden' }} className="stockOver">Stock máximo alcanzado</div>
             </div>
 
 

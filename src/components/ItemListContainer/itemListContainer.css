@@ -1,12 +1,15 @@
-.imgContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
-.imgContainer span{
-    font-size: 1.5rem;
+.imgContainer span {
+  font-size: 1.5rem;
 }
-.mainImage{
-    margin: 1rem;
+.mainImage {
+  margin: 1rem;
+}
+.productsContainer {
+  display: flex;
 }
