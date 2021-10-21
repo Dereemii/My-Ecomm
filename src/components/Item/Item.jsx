@@ -2,16 +2,20 @@ import ItemCount from '../ItemCount.js/ItemCount';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-const Item = ({ product }) => {
+
+
+const Item = ({ id, name, price, photo, stock }) => {
+
+
     return (
         <>
             <div className="cardComponent">
                 <div className="imgCard">
-                    <img src={product.photo} alt="imagen de prueba" />
+                    <img src={photo} alt="imagen de prueba" />
                 </div>
-                <h3>{product.name}</h3>
-                <p>{product.price}</p>
-                <ItemCount stock={5} initial={1} />
+                <h3>{name}</h3>
+                <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(price)}</p>
+                <ItemCount stock={stock} initial={1} />
                 <div className="addToCart">Add to Cart <FontAwesomeIcon icon={faShoppingCart} /></div>
             </div>
         </>

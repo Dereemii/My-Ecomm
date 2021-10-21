@@ -1,26 +1,40 @@
-
-
 import './itemListContainer.css';
 import ItemList from '../ItemList/ItemList';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from "react";
+import ProductsCatalogue from "../../ProductsCatalogue.json";
+
 
 const ItemListContainer = (props) => {
+
+    const [productos, setProductos] = useState([]);
+
+    const getData = (data) =>
+        new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if (data) {
+                    resolve(data);
+                } else {
+                    reject("No se encontro nada");
+                }
+            }, 2000);
+        });
+
+    useEffect(() => {
+        getData(ProductsCatalogue)
+            .then((res) => setProductos(res))
+            .catch((err) => console.log(err));
+    }, []);
 
     return (
         <>
             <h1>Hey, Wellcome {props.person}</h1>
-            <div className="imgContainer">
-                <span>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </span>
-                <img className="mainImage" src="../img/mirror-woman2.png" alt="none" />
-                <span>
-                    <FontAwesomeIcon icon={faChevronRight} />
-                </span>
-            </div>
+
             <div className="productsContainer">
-                <ItemList />
+                {productos.length
+                    ? productos.map((producto) => (
+                        <ItemList product={producto} key={producto.id} />
+                    ))
+                    : "Cargando..."}
             </div>
 
         </>

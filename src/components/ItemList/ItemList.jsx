@@ -1,35 +1,17 @@
-import { useEffect, useState } from "react";
-import Products from "../../Products.json";
 import './ItemList.css'
 import Item from '../Item/Item';
 
-const ItemList = () => {
-    const [productos, setProductos] = useState([]);
+const ItemList = ({ product }) => {
 
-    const getData = (data) =>
-        new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if (data) {
-                    resolve(data);
-                } else {
-                    reject("No se encontro nada");
-                }
-            }, 2000);
-        });
-
-    useEffect(() => {
-        getData(Products)
-            .then((res) => setProductos(res))
-            .catch((err) => console.log(err));
-    }, []);
 
     return (
         <>
-            {productos.length
-                ? productos.map((producto) => (
-                    <Item product={producto} key={producto.id} />
-                ))
-                : "Loading..."}
+            <Item
+                name={product.name}
+                price={product.price}
+                photo={product.photo}
+                stock={product.stock}
+            />
         </>
     );
 }

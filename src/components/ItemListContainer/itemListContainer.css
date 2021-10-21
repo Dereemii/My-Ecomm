@@ -13,3 +13,10 @@
 .productsContainer {
   display: flex;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* CSS */
+  .productsContainer {
+    flex-direction: column;
+  }
+}

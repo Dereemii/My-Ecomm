@@ -4,12 +4,12 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import './ItemCount.css';
 import { useState } from 'react';
 
-const ItemCount = ({ initial, stock }) => {
+const ItemCount = ({ stock }) => {
 
-    const [count, setCount] = useState(initial)
+    const [count, setCount] = useState(1)
 
     const onDecrease = () => {
-        if (count >= initial) {
+        if (count >= 1) {
             setCount(count - 1)
         }
     }
@@ -22,7 +22,6 @@ const ItemCount = ({ initial, stock }) => {
 
     return (
         <>
-
             <div className="counterCard">
                 <div>
                     <span>
@@ -34,11 +33,9 @@ const ItemCount = ({ initial, stock }) => {
                         <button onClick={onIncrease}><FontAwesomeIcon icon={faPlus} /></button>
                     </span>
                 </div>
-
                 {/* { count >= stock && <span className="stockOver">Stock máximo alcanzado</span> } */}
-                <div style={{ visibility: count > 4 ? 'visible' : 'hidden' }} className="stockOver">Stock máximo alcanzado</div>
+                <div style={{ visibility: count >= stock ? 'visible' : 'hidden' }} className="stockOver">Stock máximo alcanzado</div>
             </div>
-
 
         </>
     );
