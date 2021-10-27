@@ -4,7 +4,8 @@
     "price": 10000,
     "id": 1,
     "photo": "/img/mymelody.png",
-    "stock": 7
+    "stock": 7,
+    "description": "Peluche de conejita MyMelody, relleno suave, original de Sanrio, no indicado para secadora de ropa."
   },
   {
     "name": "Aisha",

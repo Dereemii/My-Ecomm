@@ -1,13 +1,16 @@
 import './App.css';
-import Navbar from './components/navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
   return (
-    <div className="mainContainer">      
-        <Navbar />
-        <ItemListContainer person="¿How are you?"/>
+    <div className="mainContainer">
+      <Navbar />
+      <ItemListContainer person="¿How are you?" />
+
+      <ItemDetailContainer />
     </div>
   );
 }
