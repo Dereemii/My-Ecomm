@@ -23,20 +23,13 @@ const ItemListContainer = (props) => {
         getData(ProductsCatalogue)
             .then((res) => setProductos(res))
             .catch((err) => console.log(err));
+
     }, []);
 
     return (
         <>
             <h1>Hey, Wellcome {props.person}</h1>
-
-            <div className="productsContainer">
-                {productos.length
-                    ? productos.map((producto) => (
-                        <ItemList product={producto} key={producto.id} />
-                    ))
-                    : "Cargando..."}
-            </div>
-
+            <ItemList productos={productos} />
         </>
     );
 }
