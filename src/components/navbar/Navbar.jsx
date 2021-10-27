@@ -4,6 +4,7 @@ import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import CardWidget from './CardWidget';
 
 export const Navbar = () => {
+
     return (
         <nav>
             <ul>
@@ -16,7 +17,7 @@ export const Navbar = () => {
                 <div>
                     <li><FontAwesomeIcon icon={faSearch} /></li>
                     <CardWidget />
-                    <li><FontAwesomeIcon icon={faUser} /></li>                 
+                    <li><FontAwesomeIcon icon={faUser} /></li>
                 </div>
             </ul>
         </nav>

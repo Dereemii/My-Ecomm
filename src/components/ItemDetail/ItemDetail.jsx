@@ -1,13 +1,20 @@
+
+
 const ItemDetail = ({ item }) => {
 
+    const firstItem = [...item][0]
+    console.log(firstItem)
 
     return (
         <>
+            <h2>Item Detail Container</h2>
             <div>
-                <p>{[...item][0].name}</p>
-                <p>{[...item][0].description}</p>
-                <p>Cantidad disponible {[...item][0].stock}</p>
-                <img src={[...item][0].photo} alt={[...item][0].name} />
+                {
+                    item.length ?
+                        <p>{firstItem.name}</p>
+                        : "Cargando datos"
+                }
+
             </div>
         </>
     );

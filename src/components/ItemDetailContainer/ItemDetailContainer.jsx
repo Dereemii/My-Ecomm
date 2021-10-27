@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
                 } else {
                     reject("No se encontro nada");
                 }
-            }, 2000);
+            }, 3000);
         });
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <h2>Item Detail Container</h2>
+
             <ItemDetail item={item} />
         </>
     );
