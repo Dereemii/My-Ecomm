@@ -16,8 +16,9 @@ const Item = ({ productos }) => {
                 <h3>{productos.name}</h3>
                 <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(productos.price)}</p>
                 <ItemCount stock={productos.stock} initial={1} />
-                <div className="addToCart">Add to Cart <FontAwesomeIcon icon={faShoppingCart} /></div>
+                <div className="addToCart">Agregar al carrito <FontAwesomeIcon icon={faShoppingCart} /></div>
                 <p className="stockAvailable">{productos.stock} unidades disponibles</p>
+                <button>Ver detalles</button>
             </div>
         </>
     );
