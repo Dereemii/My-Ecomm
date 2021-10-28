@@ -4,7 +4,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState();
     const getItem = (data) =>
         new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         getItem(ProductsCatalogue)
-            .then((res) => setItem(res))
+            .then((res) => setItem(res[0]))
             .catch((err) => console.log(err));
 
     }, []);
