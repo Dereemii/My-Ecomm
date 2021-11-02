@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ProductsCatalogue from "../../ProductsCatalogue.json";
 
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([]);
 
@@ -28,7 +28,7 @@ const ItemListContainer = (props) => {
 
     return (
         <>
-            <h1>Hey, Wellcome {props.person}</h1>
+
             <ItemList productos={productos} />
         </>
     );

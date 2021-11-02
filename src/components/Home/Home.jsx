@@ -1,7 +1,9 @@
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
+
 const Home = () => {
     return (
         <>
-            <h1>This is my home</h1>
+            <ItemListContainer />
         </>
     );
 }
