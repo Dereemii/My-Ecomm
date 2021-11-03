@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const Item = ({ id, productos }) => {
+const Item = ({ productos }) => {
 
 
     return (
@@ -20,7 +20,7 @@ const Item = ({ id, productos }) => {
                 <div className="addToCart">Agregar al carrito <FontAwesomeIcon icon={faShoppingCart} /></div>
                 <p className="stockAvailable">{productos.stock} unidades disponibles</p>
                 <Link
-                    to={`/item/${id}`}>
+                    to={`/item/${productos.id}`}>
                     <button>Ver detalles</button>
                 </Link>
 
