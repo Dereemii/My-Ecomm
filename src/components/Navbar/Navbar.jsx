@@ -7,8 +7,9 @@ import CardWidget from './CardWidget/CardWidget';
 export const Navbar = () => {
 
     const categories = [
-        { url: "plushies", label: "Plushies" },
-        { url: "pokemon", label: "Pokemon" }
+        { url: "neopets", label: "Neopets" },
+        { url: "pokemon", label: "Pokemon" },
+        { url: "sanrio", label: "Sanrio" }
     ];
 
     return (

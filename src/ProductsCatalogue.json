@@ -1,24 +1,27 @@
 [
   {
+    "id": "1",
     "name": "MyMelody",
     "price": "10000",
-    "id": "1",
+    "category": "Sanrio",
     "photo": "/img/mymelody.png",
     "stock": 7,
     "description": "Peluche de conejita MyMelody, relleno suave, original de Sanrio, no indicado para secadora de ropa."
   },
   {
+    "id": "2",
     "name": "Aisha",
     "price": "5000",
-    "id": "2",
+    "category": "Neopets",
     "photo": "/img/aisha.png",
     "stock": 4,
     "description": "Peluche de Aisha, original de Neopets, tiene más de 10 años en el mercado"
   },
   {
+    "id": "3",
     "name": "Snorlax",
     "price": "20000",
-    "id": "3",
+    "category": "Pokemon",
     "photo": "/img/snorlax.jpg",
     "stock": 8,
     "description": "Peluche de Snorlax, tamaño grande, sirve para poder dormir sobre él"
