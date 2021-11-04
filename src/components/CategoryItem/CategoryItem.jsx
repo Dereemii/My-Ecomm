@@ -1,8 +1,8 @@
-
 import ItemCount from '../ItemCount/ItemCount';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import './CategoryItem.css'
 
 const CategoryItem = ({ name, stock, photo, price, id }) => {
     return (

@@ -22,34 +22,34 @@ const Category = () => {
     useEffect(() => {
         getItem(ProductsCatalogue)
             .then((res) => {
-                setCategoryItem(res.find((details) => details.category === categoryId));
+                setCategoryItem(res.filter((details) => details.category === categoryId));
             })
-
             .catch((err) => console.log(err));
     }, [categoryId]);
 
-    // console.log(categoryItem)
-    // console.log(categoryId)
+    console.log(categoryItem)
+    //console.log(categoryId)
 
     return (
         <>
             <h2>Estás en la categoría: {categoryId}</h2>
-            {categoryItem ? (
-                <>
-                    <CategoryItem
-                        id={categoryItem.id}
-                        photo={categoryItem.photo}
-                        name={categoryItem.name}
-                        description={categoryItem.description}
-                        price={categoryItem.price}
-                        stock={categoryItem.stock}
-                    />
+            <div className="category-container">
+                {categoryItem
+                    ? categoryItem.map((item) => (
 
+                        <CategoryItem
+                            productos={item}
+                            key={item.id}
+                            id={item.id}
+                            photo={item.photo}
+                            name={item.name}
+                            description={item.description}
+                            price={item.price}
+                            stock={item.stock} />
 
-                </>
-            ) : (
-                "Cargando ficha de categoryItem..."
-            )}
+                    ))
+                    : 'Cargando productos...'}
+            </div>
         </>
     );
 }

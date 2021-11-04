@@ -1,3 +1,13 @@
+* {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 .mainContainer {
   text-align: center;
+}
+.cardComponent h3 {
+  font-size: 13px;
+  font-weight: bold;
+}
+.productsContainer {
+  flex-wrap: wrap;
 }

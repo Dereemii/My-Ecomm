@@ -16,6 +16,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/item/:itemId" component={ItemDetailContainer} />
         <Route exact path="/category/:categoryId" component={Category} />
+        <Route exact path="/category" component={Home} />
         <Route path="*" component={WildCard} />
       </Switch>
       <Footer />
