@@ -1,10 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProductsCatalogue from "../../ProductsCatalogue.json";
-import ItemCount from '../ItemCount/ItemCount';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import CategoryItem from "../CategoryItem/CategoryItem";
+
 
 const Category = () => {
     const { categoryId } = useParams();
@@ -38,21 +36,16 @@ const Category = () => {
             <h2>Estás en la categoría: {categoryId}</h2>
             {categoryItem ? (
                 <>
-                    <div className="cardComponent">
-                        <div className="imgCard">
-                            <img src={categoryItem.photo} alt="imagen de prueba" />
-                        </div>
-                        <h3>{categoryItem.name}</h3>
-                        <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(categoryItem.price)}</p>
-                        <ItemCount stock={categoryItem.stock} initial={1} />
-                        <div className="addToCart">Agregar al carrito <FontAwesomeIcon icon={faShoppingCart} /></div>
-                        <p className="stockAvailable">{categoryItem.stock} unidades disponibles</p>
-                        <Link
-                            to={`/item/${categoryItem.id}`}>
-                            <button>Ver detalles</button>
-                        </Link>
+                    <CategoryItem
+                        id={categoryItem.id}
+                        photo={categoryItem.photo}
+                        name={categoryItem.name}
+                        description={categoryItem.description}
+                        price={categoryItem.price}
+                        stock={categoryItem.stock}
+                    />
 
-                    </div>
+
                 </>
             ) : (
                 "Cargando ficha de categoryItem..."
