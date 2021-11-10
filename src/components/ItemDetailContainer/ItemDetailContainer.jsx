@@ -6,7 +6,6 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null);
-    const [quantity, setQuantity] = useState(undefined);
     const { itemId } = useParams();
 
     const getItem = (data) =>
@@ -30,8 +29,8 @@ const ItemDetailContainer = () => {
     }, [itemId]);
 
     const onAdd = (items) => {
-        console.log(items);
-        setQuantity(items)
+        //  console.log(items);
+        // setQuantity(items)
     };
 
 
@@ -48,7 +47,6 @@ const ItemDetailContainer = () => {
                         price={item.price}
                         stock={item.stock}
                         onAdd={onAdd}
-                        quantity={quantity}
                     />
                 ) : (
                     "Cargando ficha de productos..."
