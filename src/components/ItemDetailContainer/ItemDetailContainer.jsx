@@ -28,10 +28,6 @@ const ItemDetailContainer = () => {
             .catch((err) => console.log(err));
     }, [itemId]);
 
-    const onAdd = (items) => {
-        //  console.log(items);
-        // setQuantity(items)
-    };
 
 
     return (
@@ -46,7 +42,6 @@ const ItemDetailContainer = () => {
                         description={item.description}
                         price={item.price}
                         stock={item.stock}
-                        onAdd={onAdd}
                     />
                 ) : (
                     "Cargando ficha de productos..."

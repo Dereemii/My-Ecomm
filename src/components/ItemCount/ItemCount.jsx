@@ -25,7 +25,7 @@ const ItemCount = ({ stock, initial }) => {
 
         swal({
             title: "¡Listo!",
-            text: `Haz añadido ${count}  productos en tu carrito`,
+            text: `Haz añadido ${count} productos en tu carrito`,
             buttons: {
                 keepBuying: "Seguir comprando",
                 goToCart: "Ir a pagar",
