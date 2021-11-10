@@ -6,6 +6,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 const ItemDetailContainer = () => {
 
     const [item, setItem] = useState(null);
+    const [quantity, setQuantity] = useState(undefined);
     const { itemId } = useParams();
 
     const getItem = (data) =>
@@ -28,6 +29,12 @@ const ItemDetailContainer = () => {
             .catch((err) => console.log(err));
     }, [itemId]);
 
+    const onAdd = (items) => {
+        console.log(items);
+        setQuantity(items)
+    };
+
+
     return (
         <>
             <h2>Product Detail Example</h2>
@@ -40,6 +47,8 @@ const ItemDetailContainer = () => {
                         description={item.description}
                         price={item.price}
                         stock={item.stock}
+                        onAdd={onAdd}
+                        quantity={quantity}
                     />
                 ) : (
                     "Cargando ficha de productos..."

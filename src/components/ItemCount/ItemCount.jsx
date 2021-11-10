@@ -1,12 +1,13 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './ItemCount.css';
 import { useState } from 'react';
+import swal from 'sweetalert';
 
-const ItemCount = ({ stock }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(initial)
 
     const onDecrease = () => {
         if (count >= 1) {
@@ -18,6 +19,15 @@ const ItemCount = ({ stock }) => {
         if (count < stock) {
             setCount(count + 1)
         }
+    }
+
+    const addToCartAlert = () => {
+        onAdd(count);
+
+        swal({
+            title: "Good job!",
+            text: `Haz añadido ${count}  productos en tu carrito`,
+        });
     }
 
     return (
@@ -36,6 +46,7 @@ const ItemCount = ({ stock }) => {
                 {/* { count >= stock && <span className="stockOver">Stock máximo alcanzado</span> } */}
                 <div style={{ visibility: count >= stock ? 'visible' : 'hidden' }} className="stockOver">Stock máximo alcanzado</div>
             </div>
+            <div onClick={addToCartAlert} className="addToCart">Agregar al carrito <FontAwesomeIcon icon={faShoppingCart} /></div>
 
         </>
     );
