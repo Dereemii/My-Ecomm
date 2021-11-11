@@ -31,3 +31,9 @@
   color: red;
   font-size: 0.8rem;
 }
+.swal2-actions {
+  flex-direction: row-reverse;
+}
+a.confirm-button {
+  text-decoration: none;
+}

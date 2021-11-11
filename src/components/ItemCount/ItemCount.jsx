@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './ItemCount.css';
 import { useState } from 'react';
-import swal from 'sweetalert';
+/* import swal from 'sweetalert'; */
+
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const ItemCount = ({ stock, initial }) => {
 
@@ -21,16 +24,22 @@ const ItemCount = ({ stock, initial }) => {
         }
     }
 
+    const MySwal = withReactContent(Swal);
+
     const onAdd = () => {
 
-        swal({
-            title: "¡Listo!",
-            text: `Haz añadido ${count} productos en tu carrito`,
-            buttons: {
-                keepBuying: "Seguir comprando",
-                goToCart: "Ir a pagar",
-            }
+        MySwal.fire({
+            icon: 'success',
+            html: `Has agregado ${count} productos a tu carrito`,
+            showConfirmButton: true,
+            showCancelButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                "<a class='confirm-button' href=' /checkout'  >Ir a pagar</a>",
+            cancelButtonText: 'Volver al sitio',
+
         });
+
     }
 
     return (
