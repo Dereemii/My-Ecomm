@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer'
 import WildCard from './components/WildCard/WildCard';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Category from './components/Category/Category';
+import Cart from './components/Cart/Cart'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/item/:itemId" component={ItemDetailContainer} />
         <Route exact path="/category/:categoryId" component={Category} />
         <Route exact path="/category" component={Home} />
+        <Route exact path="/cart" component={Cart} />
         <Route path="*" component={WildCard} />
       </Switch>
       <Footer />

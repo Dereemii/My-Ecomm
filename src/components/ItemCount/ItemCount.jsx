@@ -34,7 +34,7 @@ const ItemCount = ({ stock, initial }) => {
             showCancelButton: true,
             focusConfirm: false,
             confirmButtonText:
-                "<a class='confirm-button' href=' /checkout'  >Ir a pagar</a>",
+                "<a class='confirm-button' href=' /cart'  >Ir a pagar</a>",
             cancelButtonText: 'Volver al sitio',
         });
     }
