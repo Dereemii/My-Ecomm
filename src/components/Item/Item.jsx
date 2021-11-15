@@ -1,10 +1,7 @@
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
-
-
 const Item = ({ productos }) => {
-
 
     return (
         <>
@@ -14,7 +11,7 @@ const Item = ({ productos }) => {
                 </div>
                 <h3>{productos.name}</h3>
                 <p> {Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP' }).format(productos.price)}</p>
-                <ItemCount stock={productos.stock} initial={1} />
+                <ItemCount stock={productos.stock} initial={1} productos={productos} />
                 <p className="stockAvailable">{productos.stock} unidades disponibles</p>
                 <Link
                     to={`/item/${productos.id}`}>

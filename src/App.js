@@ -7,12 +7,12 @@ import WildCard from './components/WildCard/WildCard';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Category from './components/Category/Category';
 import Cart from './components/Cart/Cart'
-import { CartContext } from './context/cartContext';
+import { CartProvider } from './Context/cartContext';
 
 
 function App() {
   return (
-    <CartContext>
+    <CartProvider>
       <BrowserRouter>
         <Navbar />
         <Switch>
@@ -25,7 +25,7 @@ function App() {
         </Switch>
         <Footer />
       </BrowserRouter>
-    </CartContext>
+    </CartProvider>
   );
 }
 
