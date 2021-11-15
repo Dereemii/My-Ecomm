@@ -7,22 +7,25 @@ import WildCard from './components/WildCard/WildCard';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Category from './components/Category/Category';
 import Cart from './components/Cart/Cart'
+import { CartContext } from './context/cartContext';
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/item/:itemId" component={ItemDetailContainer} />
-        <Route exact path="/category/:categoryId" component={Category} />
-        <Route exact path="/category" component={Home} />
-        <Route exact path="/cart" component={Cart} />
-        <Route path="*" component={WildCard} />
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+    <CartContext>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/item/:itemId" component={ItemDetailContainer} />
+          <Route exact path="/category/:categoryId" component={Category} />
+          <Route exact path="/category" component={Home} />
+          <Route exact path="/cart" component={Cart} />
+          <Route path="*" component={WildCard} />
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </CartContext>
   );
 }
 
