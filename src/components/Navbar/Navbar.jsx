@@ -1,7 +1,5 @@
 import './navbar.css';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import CardWidget from '../CardWidget/CardWidget';
 
 export const Navbar = () => {
@@ -28,9 +26,7 @@ export const Navbar = () => {
                 </div>
 
                 <div>
-                    <li><FontAwesomeIcon icon={faSearch} /></li>
                     <CardWidget />
-                    <li><FontAwesomeIcon icon={faUser} /></li>
                 </div>
             </ul>
         </nav>

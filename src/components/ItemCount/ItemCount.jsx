@@ -4,8 +4,8 @@ import { faMinus, faPlus, faShoppingCart } from '@fortawesome/free-solid-svg-ico
 import './ItemCount.css';
 import { useState } from 'react';
 
-import { useContext } from 'react';
-import { CartContext } from '../../context/cartContext';
+/* import { useContext } from 'react';
+import { CartContext } from '../../context/cartContext'; */
 
 
 import Swal from "sweetalert2";
@@ -13,7 +13,7 @@ import withReactContent from "sweetalert2-react-content";
 
 const ItemCount = ({ stock, initial, productos }) => {
 
-    const { addItem, updateItemsInCart } = useContext(CartContext);
+    //  const { addItem, updateItemsInCart } = useContext(CartContext);
 
 
     const [count, setCount] = useState(initial)

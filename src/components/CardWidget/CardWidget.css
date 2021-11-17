@@ -1,3 +1,6 @@
+.cartCount {
+  cursor: pointer;
+}
 .cartCount :nth-child(2) {
   color: #fff;
   background-color: black;

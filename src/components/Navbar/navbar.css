@@ -1,6 +1,9 @@
 li {
   list-style: none;
 }
+nav {
+  padding: 1rem;
+}
 
 nav ul {
   display: flex;
@@ -19,4 +22,12 @@ nav ul div:first-child li {
 
 nav ul div:nth-child(2) li {
   padding: 0 1.5rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  nav ul div a:nth-child(2),
+  nav ul div a:nth-child(3),
+  nav ul div a:nth-child(4) {
+    display: none;
+  }
 }
