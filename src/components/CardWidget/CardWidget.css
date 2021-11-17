@@ -1,0 +1,15 @@
+.cartCount :nth-child(2) {
+  color: #fff;
+  background-color: black;
+  border-radius: 40%;
+  padding: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -25px;
+  left: 18px;
+}

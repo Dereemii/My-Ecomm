@@ -5,7 +5,7 @@ import './ItemCount.css';
 import { useState } from 'react';
 
 import { useContext } from 'react';
-import { CartContext } from '../../Context/cartContext';
+import { CartContext } from '../../context/cartContext';
 
 
 import Swal from "sweetalert2";
@@ -14,10 +14,7 @@ import withReactContent from "sweetalert2-react-content";
 const ItemCount = ({ stock, initial, productos }) => {
 
     const { addItem, updateItemsInCart } = useContext(CartContext);
-    const handleClick = () => {
-        addItem(productos, 1);
-        updateItemsInCart(productos, -1);
-    };
+
 
     const [count, setCount] = useState(initial)
 
@@ -65,7 +62,7 @@ const ItemCount = ({ stock, initial, productos }) => {
                 {/* { count >= stock && <span className="stockOver">Stock máximo alcanzado</span> } */}
                 <div style={{ visibility: count >= stock ? 'visible' : 'hidden' }} className="stockOver">Stock máximo alcanzado</div>
             </div>
-            <div onClick={onAdd, handleClick} className="addToCart">Agregar al carrito <FontAwesomeIcon icon={faShoppingCart} /></div>
+            <div onClick={onAdd} className="addToCart">Agregar al carrito <FontAwesomeIcon icon={faShoppingCart} /></div>
 
         </>
     );

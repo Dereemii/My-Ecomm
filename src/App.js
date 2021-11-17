@@ -7,7 +7,7 @@ import WildCard from './components/WildCard/WildCard';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Category from './components/Category/Category';
 import Cart from './components/Cart/Cart'
-import { CartProvider } from './Context/cartContext';
+import { CartProvider } from './context/cartContext'
 
 
 function App() {
